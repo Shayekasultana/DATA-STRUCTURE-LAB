@@ -25,6 +25,7 @@ int main()
         if(array[i]==element)
         {
             temp=i;
+            break;
         }
     }
     if(temp==-1)
