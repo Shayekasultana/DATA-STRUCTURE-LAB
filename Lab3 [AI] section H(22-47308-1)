@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOQMySz2qxPpsbXLoWuTZub",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Shayekasultana/DATA-STRUCTURE-LAB/blob/main/Lab3%20%5BAI%5D%20section%20H(22-47308-1)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O8g8RysTECRV",
+        "outputId": "c79c0a05-724e-47c6-f2f3-5fbbad0f70a6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 20, 40, 50, 0, 0, 0]\n"
+          ]
+        }
+      ],
+      "source": [
+        "def remove(source, size, idx):\n",
+        "    if 0 <= idx < size:\n",
+        "        for i in range(idx, size - 1):\n",
+        "            source[i] = source[i + 1]\n",
+        "\n",
+        "        source[size - 1] = 0\n",
+        "        print(source)\n",
+        "    else:\n",
+        "        print(\"Invalid index\")\n",
+        "\n",
+        "source = [10, 20, 30, 40, 50, 0, 0]\n",
+        "remove(source, 5, 2)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def removeAll(source, size, element):\n",
+        "    up_array = [x for x in source if x != element]\n",
+        "    up_array += [0] * (size - len(up_array))\n",
+        "\n",
+        "    source[:] = up_array\n",
+        "    print(source)\n",
+        "\n",
+        "source = [10, 2, 30, 2, 50, 2, 2, 0, 0]\n",
+        "removeAll(source, 7, 2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nLl14izEEMuH",
+        "outputId": "4abfde7b-017f-4c7e-d2e7-7bd7112c3363"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 30, 50, 0, 0, 0, 0]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
